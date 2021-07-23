@@ -5,7 +5,7 @@ class HomeViewModel with ChangeNotifier {
 
   int result;
 
-  Future<void> getResult(int capital, int length, int rate) async {
+  Future<void> getResult(int capital, int length, double rate) async {
     result = LoanRepository().calculateLoan(capital, length, rate);
     notifyListeners();
   }

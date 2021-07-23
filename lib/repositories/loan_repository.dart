@@ -4,11 +4,11 @@ import 'package:decimal/decimal.dart';
 
 class LoanRepository {
 
-  int calculateLoan(int capital, int length, int rate){
+  int calculateLoan(int capital, int length, double rate){
     int result;
 
     // calculate capital*(rate/12)
-    var rateInt = (Decimal.fromInt(rate)/Decimal.fromInt(100)).toDouble();
+    var rateInt = rate/Decimal.fromInt(100).toDouble();
     var durationInMonth = (length*12);
     var firstValue = capital*(rateInt/12);
     // calculate 1-(1+(rate/12))^durationInMonth
